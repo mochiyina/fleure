@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btnMinus.onclick = () => { if(input.value>1) input.value--; };
         btnPlus.onclick = () => { if(input.value<product.stock) input.value++; };
 
-
         btnAdd.onclick = () => {
             const productToAdd = {
                 name: product.name,
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const totalQty = cart[existingIndex].qty + productToAdd.qty;
                 cart[existingIndex].qty = Math.min(totalQty, product.stock);
                 if(totalQty > product.stock){
-                    alert(`Stock untuk ${product.name} hanya tinggal ${product.stock} sahaja.`);
+                    alert(`Stock for ${product.name} only ${product.stock} left.`);
                 }
             } else {
                 cart.push(productToAdd);
@@ -112,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             sessionStorage.setItem("fleureCart", JSON.stringify(cart));
 
-            window.location.href = "cart.php";
+            window.location.href = "cart.html";
         };
 
         grid.appendChild(card);

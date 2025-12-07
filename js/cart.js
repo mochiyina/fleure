@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <i class="bi bi-cart-x" style="font-size:3rem;color:var(--primary-pink);"></i>
                     <h4 class="mt-3">Your cart is empty</h4>
                     <p class="text-muted">Start adding some beautiful flowers!</p>
-                    <a href="products.php" class="btn btn-view-all mt-3">Browse Products</a>
+                    <a href="products.html" class="btn btn-view-all mt-3">Browse Products</a>
                 </div>`;
             updateSummary();
             return;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItemsContainer.appendChild(addMoreDiv);
 
         document.getElementById("addMoreBtn").onclick = () => {
-            window.location.href = "products.php";
+            window.location.href = "products.html";
         };
 
         updateSummary();
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             sessionStorage.setItem(cartKey, JSON.stringify(cart));
-            window.location.href = "checkout.php";
+            window.location.href = "checkout.html";
         };
     }
 
